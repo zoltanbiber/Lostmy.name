@@ -1,4 +1,23 @@
-%h1 Yolo
-%a.btn.btn-default.btn-success Success!
-%p
-	%span.glyphicon.glyphicon-copyright-mark
+%nav.navbar.navbar-default.navbar-fixed-top
+	.container
+		.navbar-header
+			%button.navbar-toggle.collapsed{data: { toggle: 'collapse', target: '.nav-collapse' }, aria: {expanded: false} }
+				%span.sr-only Toggle Nav Bar
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+			%a.navbar-brand{href: "#{root_path}"}
+				= image_tag 'logo.svg', alt: 'Lostmy.name logo', class: 'logo'
+		.collapse.navbar-collapse.nav-collapse
+			%ul.nav.navbar-nav
+				%li= link_to 'Survey Manager', root_path, class: 'title'
+			%ul.nav.navbar-nav.navbar-right
+				%li= link_to 'Import New Survey'
+				%li= link_to 'List All Imported Users'
+
+		.jumbotron.text-center
+			%h1 Lostmy.name Survey Manager
+			%p You can use this tool to import CSV files with user survey data and create widgets that can be shared.
+			%a.btn.btn-primary.btn-lg Import New Survey
+			%a.btn.btn-primary.btn-lg List All Imported Users
+
