@@ -11,6 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160423182222) do
+
+  create_table "users", force: :cascade do |t|
+    t.string   "unique_code",           limit: 255
+    t.string   "relationship_to_child", limit: 255
+    t.float    "child_age",             limit: 24
+    t.string   "purchase_ocassion",     limit: 255
+    t.string   "gender",                limit: 255
+    t.integer  "age",                   limit: 4
+    t.boolean  "has_children"
+    t.string   "email",                 limit: 255
+    t.datetime "survey_started_at"
+    t.datetime "survey_submitted_at"
+    t.string   "network_id",            limit: 255
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
 
 end
