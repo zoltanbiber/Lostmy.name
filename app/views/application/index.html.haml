@@ -1,6 +1,14 @@
 .jumbotron.text-center
-  %h1 Lostmy.name Survey Manager
-  %p You can use this tool to import CSV files with user survey data and create widgets that can be shared.
-  = link_to 'Import New Survey', import_users_path, class: 'btn btn-primary btn-lg'
-  = link_to 'List All Imported Users', users_path, class: 'btn btn-primary btn-lg'
+	%h1 Lostmy.name Survey Manager
+	%p You can use this tool to import CSV files with user survey data and create widgets that can be shared.
 
+.container
+	.row
+		.col-md-4.col-md-offset-4
+			.panel.panel-default
+				.panel-heading Import a CSV File
+				.panel-body
+					= form_tag import_users_path, multipart: true do
+						= file_field_tag :file
+						%p
+						= submit_tag 'Import', class: 'btn btn-sm btn-primary'
