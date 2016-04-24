@@ -1,1 +1,31 @@
-
+.container
+	.panel.panel-default
+		.panel-heading List of imported users
+		%table.table-condensed.table-bordered
+			%thead
+				%tr
+					%th User ID
+					%th Unique Code
+					%th Relationship To Child
+					%th Child Age
+					%th Purchase Occasion
+					%th Gender
+					%th Age
+					%th Has Children
+					%th Email
+					%th Started Survey At
+					%th Submitted Survey At
+			%tbody
+				- @users.each do |u|
+					%tr
+						%td= u.id
+						%td= u.unique_code
+						%td= u.relationship_to_child
+						%td= number_with_precision(u.child_age, precision: 1, significant: true)
+						%td= u.purchase_occasion
+						%td= u.gender
+						%td= u.age
+						%td= u.has_children
+						%td= u.email
+						%td= u.started_survey_at
+						%td= u.submitted_survey_at
